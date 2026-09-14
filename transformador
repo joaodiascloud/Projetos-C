@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+int main(){
+    int opcao;
+    float valor;
+    float kmm;
+    float mkm;
+    float cmm;
+
+    printf("\n==== DIGITE UM VALOR ====\n");
+    printf("-> ");
+    scanf("%f", &valor);
+
+    printf("\n==== SELECIONE FORMA QUE DESEJA TRANSFORMAR ====\n");
+    printf("1 - Converter KM em Metros.\n");
+    printf("2 - Converter Metros em KM.\n");
+    printf("3 - Converter CM em Metros.\n");
+    printf("4 - Sair.\n");
+    printf("-> ");
+    scanf("%d", &opcao);
+
+    switch(opcao){
+        case 1:
+            kmm = valor * 1000;
+            if (kmm == 1){
+            	printf("Resultado: %.2f metro\n", kmm);
+            }else{ 
+		printf("Resultado: %.2f metros", kmm);
+	    }break;
+
+        case 2:
+            mkm = (float)valor / 1000;
+            printf("Resultado: %.2f km\n", mkm);
+            break;
+
+        case 3:           
+            cmm = (float)valor / 100;
+	    if (cmm == 1){
+            	printf("Resultado: %.2f metro\n", cmm);
+            }else{ 
+		printf("Resultado: %.2f metros\n", cmm);
+	    }break;
+
+        case 4:
+            printf("Encerrando...\n");
+            return 0;
+
+        default:
+            printf("Opção inválida.\n");
+            break;
+    }return 0;
+}	 
