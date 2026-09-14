@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main(){
+	char opcao;
+	printf("\n==== DIGITE O TIPO DE COMBUSTÍVEL ====\n");
+	printf("G - D - A\n");
+	printf("--> ");
+	scanf(" %c", &opcao);
+
+	switch(opcao){
+		case 'G': case 'g':
+			printf("Resultado: Gasolina");
+			break;
+		case 'A': case 'a':
+			printf("Resultado: Alcool");
+			break;
+		case 'D': case 'd':
+			printf("Resultado: Diesel");
+			break;
+		default:
+			printf("Opção Inválida");
+			break;
+	}return 0;
+}
