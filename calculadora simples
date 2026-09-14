@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main(){
+
+    int n1;
+    int n2;
+    char operador;
+    float resultado;
+
+    scanf("%d", &n1);
+    scanf("%d", &n2);
+    scanf(" %c", &operador);
+
+    switch(operador){
+        case '+':
+            resultado = n1 + n2;
+            printf("%.2f", resultado);
+            break;
+
+        case '-':
+            resultado = n1 - n2;
+            printf("%.2f", resultado);
+            break;
+
+        case '*':
+            resultado = n1 * n2;
+            printf("%.2f", resultado);
+            break;
+
+        case '/':
+            if(n2 == 0){
+                printf("ERRO: Divisão por 0");
+            }else{
+                resultado = (float)n1 / n2;
+                printf("%.2f", resultado);
+            }
+            break;
+
+        default:
+            printf("Operador inválido");
+    }
+
+    return 0;
+}
