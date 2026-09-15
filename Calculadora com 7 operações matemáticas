@@ -1,0 +1,114 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+  while(1){
+    float valor1;
+    float valor2;
+    float resultado;
+    int opcao;
+
+    printf("\n==== BEM-VINDO A CALCULADORA! ====\n");
+    printf("SELECIONE UMA OPÇÃO PARA INICIAR A OPERAÇÃO.\n");
+    printf("1 - SOMA    2 - SUBTRAÇÃO\n3 - MULTIPLICAÇÃO    4 - DIVISÃO\n5 - POTÊNCIA    6 - RAIZ QUADRADA\n 7 - PORCÊNTAGEM    8 - SAIR\n-->");
+    scanf("%d", &opcao);
+
+    switch(opcao){
+      case 1:
+        printf("\n==== DIGITE OS VALORES! ====\n");
+        printf("VALOR 1 ---> ");
+        scanf("%f", &valor1);
+        printf("\nVALOR 2 ---> ");
+        scanf("%f", &valor2);
+
+        resultado = valor1 + valor2;
+        printf("A SOMA DOS VALORES É: %.2f", resultado);
+
+        break;
+
+      case 2:
+        printf("\n==== DIGITE OS VALORES! ====\n");
+        printf("VALOR 1 ---> ");
+        scanf("%f", &valor1);
+        printf("\nVALOR 2 ---> ");
+        scanf("%f", &valor2);
+
+        resultado = valor1 - valor2;
+        printf("A SUBTRAÇÃO DOS VALORES É: %.2f", resultado);
+
+        break;
+
+      case 3:
+        printf("\n==== DIGITE OS VALORES! ====\n");
+        printf("VALOR 1 ---> ");
+        scanf("%f", &valor1);
+        printf("\nVALOR 2 ---> ");
+        scanf("%f", &valor2);
+
+        resultado = valor1 * valor2;
+        printf("A MULTIPLICAÇÃO DOS VALORES É: %.2f", resultado);
+
+        break;
+
+      case 4:
+        printf("\n==== DIGITE OS VALORES! ====\n");
+        printf("VALOR 1 ---> ");
+        scanf("%f", &valor1);
+        printf("\nVALOR 2 ---> ");
+        scanf("%f", &valor2);
+
+        if(valor2 == 0){
+          printf("ERRO: DIVISÃO POR 0\n");
+        }else{
+          resultado = valor1 / valor2;
+          printf("A DIVISÃO DOS VALORES É: %.2f", resultado);
+        }
+        break;
+
+      case 5:
+        printf("\n==== DIGITE OS VALORES! ====\n");
+        printf("BASE ---> ");
+        scanf("%f", &valor1);
+        printf("\nEXPOENTE ---> ");
+        scanf("%f", &valor2);
+
+        resultado = pow(valor1, valor2);
+        printf("RESULTADO É: %.2f", resultado);
+
+        break;
+      case 6:
+        printf("\n==== DIGITE O VALOR! ====\n");
+        printf("VALOR ---> ");
+        scanf("%f", &valor1);
+
+        if(valor1 < 0){
+          printf("ERRO: NÃO É POSSÍVEL CALCULAR A RAÍZ DE UM NÚMERO NEGATIVO.\n");
+        }else{
+          resultado = sqrt(valor1);
+          printf("A RAIZ DE %f É %.2f", valor1, resultado);
+        }
+
+        break;
+          
+      case 7:
+        printf("\n==== DESCUBRA A %% DE ALGUM NÚMERO ====\n");
+        printf("INSIRA A % ---> ");
+        scanf("%f", &valor1);
+        printf("INSIRA O VALOR DESEJADO ---> ");
+        scanf("%f", &valor2);
+
+        resultado = (valor1 * valor2) / 100;
+        printf("---> %.2f%% de %.2f é %.2f !", valor1, valor2, resultado);
+        break;
+      case 8:
+        printf("\n==== OBRIGADO POR USAR ====\n");
+        printf("ENCERRANDO...");
+        return 0;
+      default:
+        printf("OPÇÃO INVÁLIDA");
+        break;
+    }
+  }
+    
+  return 0;
+}
