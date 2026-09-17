@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(){
+  int palpite;
+  int numero;
+  int opcao;
+  int tentativas = 0;
+  
+  srand(time(NULL));
+  numero = rand() % 100 + 1;
+
+  printf("\n==== ADIVINHADOR DE NÚMERO ====\n");
+  printf("1 - JOGAR\n");
+  printf("2 - REGRAS\n");
+  printf("3 - SAIR\n");
+  scanf("%d", &opcao);
+
+  switch (opcao){
+    case 1:
+      while (1){
+        tentativas++;
+        printf("\n==== DIGITE O SEU PALPITE (1 A 100) ====\n");
+        printf("---> ");
+        scanf("%d", &palpite);
+        
+          if (palpite <1 || palpite > 100){
+          printf("\nDIGITE UM NÚMERO ENTRE 1 E 100!\n");
+          tentativas --;
+          continue;
+        }
+        
+        if (palpite == numero){
+          printf("\nACERTOU!!\n");
+          
+          if (tentativas > 1){
+            printf("VOCÊ PRECISOU DE %d TENTATIVAS PARA ACERTAR!\n", tentativas);
+            
+            if (tentativas <= 3){
+              printf("GÊNIO!\n");
+            } else if (tentativas <= 7){
+              printf("MUITO BOM!\n");
+            } else {
+              printf("PERSISTENTE! IMPORTANTE É NÃO DESISTIR!\n");
+            }
+          } else { 
+            printf("\nUAU! DE PRIMEIRA? VOCÊ É BOM NISSO! (ou ta trapaceando)\n");
+          }
+        break;
+        } else if (palpite > numero){
+          printf("\nO NÚMERO ESCOLHIDO POR VOCÊ É MAIOR QUE O NÚMERO ESCOLHIDO PELO SISTEMA!");
+        } else {
+          printf("\nO NÚMERO ESCOLHIDO POR VOCÊ É MENOR QUE O NÚMERO ESCOLHIDO PELO SISTEMA!");
+        } 
+      }
+      break;
+    case 2:
+      printf("\n===== REGRAS =====\n");
+      printf("\nUM NÚMERO ENTRE 1 E 100 SERÁ ESCOLHIDO.\nVOCÊ DEVE ADIVINHAR QUAL O NÚMERO ESCOLHIDO COM BASE EM DICAS DADAS PELO SISTEMA.\n");
+      break;
+    case 3:
+      printf("\nENCERRANDO...\n");
+      return 0;
+    default:
+      printf("\nOPÇÃO INVÁLIDA\n");
+      break;
+  }
+  return 0;
+}
