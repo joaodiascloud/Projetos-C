@@ -22,7 +22,7 @@ int main(){
         scanf("%f", &valor2);
 
         resultado = valor1 + valor2;
-        printf("\nA SOMA DOS VALORES É: %.2f", resultado\n);
+        printf("\nA SOMA DOS VALORES É: %.2f\n", resultado);
 
         break;
 
@@ -34,7 +34,7 @@ int main(){
         scanf("%f", &valor2);
 
         resultado = valor1 - valor2;
-        printf("\nA SUBTRAÇÃO DOS VALORES É: %.2f", resultado\n);
+        printf("\nA SUBTRAÇÃO DOS VALORES É: %.2f\n", resultado);
 
         break;
 
@@ -46,7 +46,7 @@ int main(){
         scanf("%f", &valor2);
 
         resultado = valor1 * valor2;
-        printf("\nA MULTIPLICAÇÃO DOS VALORES É: %.2f", resultado\n);
+        printf("\nA MULTIPLICAÇÃO DOS VALORES É: %.2f\n", resultado);
 
         break;
 
@@ -61,7 +61,7 @@ int main(){
           printf("\nERRO: DIVISÃO POR 0\n");
         }else{
           resultado = valor1 / valor2;
-          printf("\nA DIVISÃO DOS VALORES É: %.2f", resultado\n);
+          printf("\nA DIVISÃO DOS VALORES É: %.2f\n", resultado);
         }
         break;
 
@@ -73,7 +73,7 @@ int main(){
         scanf("%f", &valor2);
 
         resultado = pow(valor1, valor2);
-        printf("\nRESULTADO É: %.2f", resultado\n);
+        printf("\nRESULTADO É: %.2f\n", resultado);
 
         break;
       case 6:
@@ -85,7 +85,7 @@ int main(){
           printf("\nERRO: NÃO É POSSÍVEL CALCULAR A RAÍZ DE UM NÚMERO NEGATIVO.\n");
         }else{
           resultado = sqrt(valor1);
-          printf("\nA RAIZ DE %f É %.2f", valor1, resultado\n);
+          printf("\nA RAIZ DE %f É %.2f\n", valor1, resultado);
         }
 
         break;
@@ -98,7 +98,7 @@ int main(){
         scanf("%f", &valor2);
 
         resultado = (valor1 * valor2) / 100;
-        printf("\n---> %.2f%% de %.2f é %.2f !", valor1, valor2, resultado\n);
+        printf("\n---> %.2f%% de %.2f é %.2f !\n", valor1, valor2, resultado);
         break;
       case 8:
         printf("\n==== OBRIGADO POR USAR ====\n");
