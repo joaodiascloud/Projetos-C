@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char user[50], user1[50];
+    char password[50], password1[50];
+    float preco, total = 0;
+
+    printf("\n===== Login =====\n");
+    printf("Crie um usuario: ");
+    scanf("%49s", user);
+    printf("\nCrie uma senha: ");
+    scanf("%49s", password);
+
+    printf("\n===== BEM-VINDO A LANCHONETE UNASP =====\n");
+    printf("Digite seu usuario: ");
+    scanf("%s", user1);
+    printf("\nDigite sua senha: ");
+    scanf("%s", password1);
+
+    if (strcmp(user, user1) == 0 && strcmp(password, password1) == 0) {
+        printf("\nLogin bem-sucedido!\n");
+
+            while(1){
+                int opcao;
+                printf("\n===== MENU =====\n");
+                printf("1. Hamburguer\n2. Pizza\n3. Refrigerante\n4. Salgado\n5. Sair\n");
+                printf("Escolha uma opcao: ");
+                scanf("%d", &opcao);
+
+                switch(opcao) {
+                    case 1:
+                        printf("\nVoce escolheu Hamburguer.\n");
+                        preco = 10.0;
+                        total += preco;
+                        break;
+                    case 2:
+                        printf("\nVoce escolheu Pizza.\n");
+                        preco = 20.0;
+                        total += preco;
+                        break;
+                    case 3:
+                        printf("\nVoce escolheu Refrigerante.\n");
+                        preco = 5.0;
+                        total += preco;
+                        break;
+                    case 4:
+                        printf("\nVoce escolheu Salgado.\n");
+                        preco = 8.0;
+                        total += preco;
+                        break;
+                    case 5:
+                        printf("\nSubtotal: R$ %.2f\n", total);
+                        printf("Desconto: 10%%\n");
+                        printf("Total: R$ %.2f\n", total * 0.9);
+                        printf("\nObrigado por comprar conosco!\n");
+                        return 0;
+                    default:
+                        printf("\nOpcao invalida. Tente novamente.\n");
+                }
+            }
+
+    } else {
+        printf("\nUsuario ou senha incorretos.\n");
+    }
+
+    return 0;
+}
