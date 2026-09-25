@@ -1,0 +1,105 @@
+#include <stdio.h>
+
+int main() {
+
+    int opcao;
+
+    printf("\n===== MATRIZ =====\n");
+    printf("1 - Determinante 2x2\n");
+    printf("2 - Determinante 3x3\n");
+    printf("3 - Determinante 4x4\n");
+    printf("4 - Sair\n");
+
+    printf("\n---> ");
+    scanf("%d", &opcao);
+
+    switch(opcao){
+
+        case 1: {
+
+            float a1, a2, b1, b2;
+            float det;
+
+            printf("\n===== INSIRA OS VALORES =====\n");
+
+            printf("\na1 ---> ");
+            scanf("%f", &a1);
+
+            printf("\na2 ---> ");
+            scanf("%f", &a2);
+
+            printf("\nb1 ---> ");
+            scanf("%f", &b1);
+
+            printf("\nb2 ---> ");
+            scanf("%f", &b2);
+
+            det = (a1 * b2) - (b1 * a2);
+
+            printf("\nDeterminante = %.2f\n", det);
+
+            break;
+        }
+
+        case 2: {
+
+            float a1, a2, a3;
+            float b1, b2, b3;
+            float c1, c2, c3;
+            float det;
+
+            printf("\n===== INSIRA OS VALORES =====\n");
+
+            printf("\na1 ---> ");
+            scanf("%f", &a1);
+
+            printf("\na2 ---> ");
+            scanf("%f", &a2);
+
+            printf("\na3 ---> ");
+            scanf("%f", &a3);
+
+            printf("\nb1 ---> ");
+            scanf("%f", &b1);
+
+            printf("\nb2 ---> ");
+            scanf("%f", &b2);
+
+            printf("\nb3 ---> ");
+            scanf("%f", &b3);
+
+            printf("\nc1 ---> ");
+            scanf("%f", &c1);
+
+            printf("\nc2 ---> ");
+            scanf("%f", &c2);
+
+            printf("\nc3 ---> ");
+            scanf("%f", &c3);
+
+            det = (a1 * b2 * c3)
+                + (a2 * b3 * c1)
+                + (a3 * b1 * c2)
+                - (a3 * b2 * c1)
+                - (a1 * b3 * c2)
+                - (a2 * b1 * c3);
+
+            printf("\nDeterminante = %.2f\n", det);
+
+            break;
+        }
+
+        case 3:
+            printf("\nDeterminante 4x4 ainda nao implementado.\n");
+            break;
+
+        case 4:
+            printf("\nEncerrando programa...\n");
+            break;
+
+        default:
+            printf("\nOpcao invalida!\n");
+    }
+
+    return 0;
+}
