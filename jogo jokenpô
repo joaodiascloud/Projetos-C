@@ -1,0 +1,143 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+
+    int opcao;
+    int escolha;
+    int sistema;
+    int resposta;
+    int placaruser = 0;
+    int placarsistema = 0;
+
+    srand(time(NULL));
+
+    while (1) {
+
+        printf("\n===== PEDRA, PAPEL E TESOURA =====\n");
+        printf("1 - JOGAR\n");
+        printf("2 - REGRAS\n");
+        printf("3 - SAIR\n");
+        printf("---> ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                while (1) {
+                    sistema = rand() % 3 + 1;
+                    printf("\n===== ESCOLHA SUA JOGADA =====\n");
+                    printf("1 - PEDRA\n");
+                    printf("2 - PAPEL\n");
+                    printf("3 - TESOURA\n");
+                    printf("4 - VOLTAR AO MENU\n");
+                    printf("---> ");
+                    scanf("%d", &escolha);
+
+                    if (escolha == 4) {
+                        break;
+                    }
+
+                    switch (escolha) {
+                        case 1:
+                            if (sistema == 1) {
+                                printf("\nSISTEMA: PEDRA\n");
+                                printf("USUARIO: PEDRA\n");
+                                printf("LOGO DEU EMPATE!\n");
+                            } else if (sistema == 2) {
+                                printf("\nSISTEMA: PAPEL\n");
+                                printf("USUARIO: PEDRA\n");
+                                printf("LOGO PAPEL > PEDRA\n");
+                                placarsistema++;
+                            } else {
+                                printf("\nSISTEMA: TESOURA\n");
+                                printf("USUARIO: PEDRA\n");
+                                printf("LOGO PEDRA > TESOURA\n");
+                                placaruser++;
+                            }
+                            break;
+
+                        case 2:
+                            if (sistema == 1) {
+                                printf("\nSISTEMA: PEDRA\n");
+                                printf("USUARIO: PAPEL\n");
+                                printf("LOGO PAPEL > PEDRA\n");
+                                placaruser++;
+                            } else if (sistema == 2) {
+                                printf("\nSISTEMA: PAPEL\n");
+                                printf("USUARIO: PAPEL\n");
+                                printf("LOGO DEU EMPATE!\n");
+
+                            } else {
+                                printf("\nSISTEMA: TESOURA\n");
+                                printf("USUARIO: PAPEL\n");
+                                printf("LOGO TESOURA > PAPEL\n");
+                                placarsistema++;
+                            }
+                            break;
+
+                        case 3:
+                            if (sistema == 1) {
+                                printf("\nSISTEMA: PEDRA\n");
+                                printf("USUARIO: TESOURA\n");
+                                printf("LOGO PEDRA > TESOURA\n");
+                                placarsistema++;
+                            } else if (sistema == 2) {
+                                printf("\nSISTEMA: PAPEL\n");
+                                printf("USUARIO: TESOURA\n");
+                                printf("LOGO TESOURA > PAPEL\n");
+                                placaruser++;
+                            } else {
+                                printf("\nSISTEMA: TESOURA\n");
+                                printf("USUARIO: TESOURA\n");
+                                printf("LOGO DEU EMPATE!\n");
+                            }
+                            break;
+
+                        default:
+                            printf("\nOPCAO INVALIDA!\n");
+                            continue;
+                    }
+
+                    printf("\n===== PLACAR =====\n");
+                    printf("%d X %d\n", placaruser, placarsistema);
+                }
+                break;
+
+            case 2:
+                while (1) {
+                    printf("\n===== REGRAS DO JOGO =====\n");
+                    printf("O SIMBOLO '>' SIGNIFICA 'VENCE'\n");
+                    printf("PEDRA > TESOURA\n");
+                    printf("TESOURA > PAPEL\n");
+                    printf("PAPEL > PEDRA\n");
+
+                    printf("\nENTENDEU COMO O JOGO FUNCIONA?\n");
+                    printf("1 - SIM\n");
+                    printf("2 - NAO\n");
+                    printf("---> ");
+
+                    scanf("%d", &resposta);
+
+                    if (resposta == 1) {
+                        break;
+                    }
+                    else if (resposta == 2) {
+                        continue;
+                    }
+                    else {
+                        printf("\nOPCAO INVALIDA!\n");
+                    }
+                }
+                break;
+            case 3:
+                printf("\nENCERRANDO...\n");
+                return 0;
+
+            default:
+                printf("\nOPCAO INVALIDA!\n");
+                break;
+        }
+    }
+    return 0;
+}
